@@ -44,6 +44,7 @@ sourceMapSupport.install({
         };
       }
     }
+
     return null;
   },
 });

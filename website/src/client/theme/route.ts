@@ -16,7 +16,7 @@ export const serializeTheme = async (theme: Theme) => themeCookie.serialize({ th
 
 export const getTheme = async (request: Request) => {
   const cookie = await themeCookie.parse(request.headers.get("Cookie"));
-  return isValidTheme(cookie?.theme) ? cookie.theme as Theme : Theme.DARK;
+  return isValidTheme(cookie?.theme) ? (cookie.theme as Theme) : Theme.DARK;
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {

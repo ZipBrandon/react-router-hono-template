@@ -7,8 +7,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "format": "pnpm run format:prettier && npm run format:stylelint",
-    "format:prettier": "prettier --check --write --ignore-unknown --ignore-path .gitignore \"{website,packages}/**/*.{[jt]s?(x),m[jt]s,json,md}\"",
-    "format:stylelint": "stylelint --fix --ignore-path .gitignore --quiet \"{website,packages}/**/*.{css,scss}\""
+    "format:prettier": "prettier --check --write --ignore-unknown --ignore-path .prettierignore \"{website,packages}/**/*.{[jt]s?(x),m[jt]s,json,md}\"",
+    "format:stylelint": "stylelint --fix --ignore-path .prettierignore --quiet \"{website,packages}/**/*.{css,scss}\""
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.1",

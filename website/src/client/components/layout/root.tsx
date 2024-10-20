@@ -5,6 +5,7 @@ import { ThemeScript } from "~/client/theme/script";
 
 export function RootLayout({ children }: React.PropsWithChildren) {
   const theme = useTheme();
+
   return (
     <html lang="en" data-theme={theme}>
       <head>
