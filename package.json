@@ -1,0 +1,46 @@
+{
+  "name": "root",
+  "type": "module",
+  "private": true,
+  "sideEffects": false,
+  "packageManager": "pnpm@9.12.1",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "pnpm run format:prettier && npm run format:stylelint",
+    "format:prettier": "prettier --check --write --ignore-unknown --ignore-path .gitignore \"{website,packages}/**/*.{[jt]s?(x),m[jt]s,json,md}\"",
+    "format:stylelint": "stylelint --fix --ignore-path .gitignore --quiet \"{website,packages}/**/*.{css,scss}\""
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.1",
+    "@eslint/js": "^9.13.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "stylelint": "^16.10.0",
+    "stylelint-config-clean-order": "6.1.0",
+    "stylelint-config-standard-scss": "13.1.0",
+    "stylelint-config-tailwindcss": "0.0.7",
+    "stylelint-prettier": "5.0.2",
+    "stylelint-scss": "6.8.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.10.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@react-router/node": "npm:@react-router/node@pre",
+      "@react-router/dev": "npm:@react-router/dev@pre",
+      "@types/react": "npm:@types/react",
+      "@types/react-dom": "npm:@types/react-dom",
+      "esbuild": "npm:esbuild",
+      "react": "npm:react@rc",
+      "react-dom": "npm:react-dom@rc",
+      "react-router": "npm:react-router@pre"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

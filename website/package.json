@@ -1,0 +1,53 @@
+{
+  "name": "website",
+  "type": "module",
+  "private": true,
+  "sideEffects": false,
+  "packageManager": "pnpm@9.12.1",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "cross-env NODE_ENV=production react-router build",
+    "dev": "cross-env NODE_ENV=development react-router dev",
+    "start": "cross-env NODE_ENV=production node ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.2",
+    "@hono/vite-dev-server": "^0.16.0",
+    "@react-router/dev": "7.0.0-pre.1",
+    "@react-router/node": "7.0.0-pre.1",
+    "clsx": "^2.1.1",
+    "dotenv": "16.4.5",
+    "dotenv-expand": "11.0.6",
+    "hono": "^4.6.5",
+    "is-ip": "^5.0.1",
+    "isbot": "^5.1.17",
+    "pretty-cache-header": "1.0.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-router": "7.0.0-pre.1",
+    "source-map-support": "^0.5.21",
+    "tailwind-merge": "^2.5.4",
+    "usehooks-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.7",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "@types/source-map-support": "^0.5.10",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "esbuild": "0.24.0",
+    "postcss": "^8.4.47",
+    "postcss-load-config": "^6.0.1",
+    "sass-embedded": "^1.80.3",
+    "tailwindcss": "^3.4.14",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
