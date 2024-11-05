@@ -41,6 +41,8 @@ export default defineConfig({
             packages: "external",
             bundle: true,
             logLevel: "info",
+            minify: true,
+            mangleCache: {},
           })
           .catch((error) => {
             console.error(error);
@@ -50,6 +52,22 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    emptyOutDir: true,
+    minify: true,
+    assetsInlineLimit: 0,
+    chunkSizeWarningLimit: 1024,
+    copyPublicDir: false,
+    rollupOptions: {
+      output: { minifyInternalExports: true },
+    },
+  },
+  esbuild: {
+    format: "esm",
+    logLevel: "info",
+    minify: true,
+    mangleCache: {},
+  },
   server: {
     port,
     open: false,

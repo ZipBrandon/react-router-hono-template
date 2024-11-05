@@ -1,6 +1,6 @@
 import { ActionFunctionArgs, createCookie, redirect } from "react-router";
 
-import { IS_HOSTED, IS_PRODUCTION_BUILD, SITE_URL } from "~/lib/env.server";
+import { IS_HOSTED, IS_PRODUCTION_BUILD, SITE_URL } from "~/lib/env";
 import { safeRedirect } from "~/lib/utils";
 import { isValidTheme, Theme } from ".";
 

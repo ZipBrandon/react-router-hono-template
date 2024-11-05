@@ -2,6 +2,7 @@
 
 **/.cache
 **/build
+**/.react-router
 **/.env
 **/tsconfig.tsbuildinfo
 

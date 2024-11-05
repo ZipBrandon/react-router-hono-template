@@ -2,7 +2,7 @@ import { pathToFileURL } from "node:url";
 
 import { type ServerBuild } from "react-router";
 
-import { IS_PRODUCTION_BUILD } from "~/lib/env.server";
+import { IS_PRODUCTION_BUILD } from "~/lib/env";
 
 const viteDevServer = IS_PRODUCTION_BUILD
   ? undefined

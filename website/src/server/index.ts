@@ -1,10 +1,6 @@
-import "@react-router/node/install";
-
 import fs from "node:fs";
 import { join, posix } from "node:path";
 import url from "node:url";
-
-import { installGlobals } from "@react-router/node";
 
 import { serve } from "@hono/node-server";
 import { serveStatic } from "@hono/node-server/serve-static";
@@ -15,7 +11,7 @@ import { prettyJSON } from "hono/pretty-json";
 
 import sourceMapSupport from "source-map-support";
 
-import * as env from "~/lib/env.server";
+import * as env from "~/lib/env";
 import { cache, clientIp, getServerBuild, reactRouter } from "./middleware";
 import routes from "./routes";
 
@@ -48,23 +44,31 @@ sourceMapSupport.install({
     return null;
   },
 });
-installGlobals();
 
 const createServer = async () => {
   const build = await getServerBuild();
   const app = new Hono()
     .use(compress({ encoding: "gzip" }), prettyJSON({ space: 4 }), clientIp())
     .route("/", routes)
-    .use(
-      posix.join(build.publicPath, "assets", "*"),
-      cache({
-        public: true,
-        maxAge: "1week",
-        immutable: true,
+    .get(
+      cache(
+        {
+          public: true,
+          maxAge: "1week",
+          immutable: true,
+        },
+        "/assets/",
+      ),
+      serveStatic({
+        root: build.assetsBuildDirectory,
       }),
-      serveStatic({ root: join(build.assetsBuildDirectory, "assets") }),
     )
-    .use(cache({ maxAge: "1day" }), serveStatic({ root: env.IS_PRODUCTION_BUILD ? build.assetsBuildDirectory : "public" }))
+    .get(
+      cache({ maxAge: "1day" }),
+      serveStatic({
+        root: "public",
+      }),
+    )
     .use(
       reactRouter({
         build,
