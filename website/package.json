@@ -14,8 +14,8 @@
   "dependencies": {
     "@hono/node-server": "^1.13.5",
     "@hono/vite-dev-server": "^0.16.0",
-    "@react-router/dev": "0.0.0-nightly-5287ffc12-20241105",
-    "@react-router/node": "0.0.0-nightly-5287ffc12-20241105",
+    "@react-router/dev": "7.0.0-pre.5",
+    "@react-router/node": "7.0.0-pre.5",
     "clsx": "^2.1.1",
     "dotenv": "16.4.5",
     "dotenv-expand": "11.0.6",
@@ -25,7 +25,7 @@
     "pretty-cache-header": "1.0.0",
     "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-router": "0.0.0-nightly-5287ffc12-20241105",
+    "react-router": "7.0.0-pre.5",
     "source-map-support": "^0.5.21",
     "tailwind-merge": "^2.5.4",
     "usehooks-ts": "^3.1.0"

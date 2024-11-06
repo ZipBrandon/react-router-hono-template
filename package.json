@@ -30,14 +30,14 @@
   },
   "pnpm": {
     "overrides": {
-      "@react-router/node": "npm:@react-router/node@nightly",
-      "@react-router/dev": "npm:@react-router/dev@nightly",
+      "@react-router/node": "npm:@react-router/node@pre",
+      "@react-router/dev": "npm:@react-router/dev@pre",
       "@types/react": "npm:@types/react",
       "@types/react-dom": "npm:@types/react-dom",
       "esbuild": "npm:esbuild",
       "react": "npm:react@rc",
       "react-dom": "npm:react-dom@rc",
-      "react-router": "npm:react-router@nightly"
+      "react-router": "npm:react-router@pre"
     }
   },
   "engines": {
