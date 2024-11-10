@@ -5,5 +5,5 @@
 **/.env
 **/.react-router
 **/tsconfig.tsbuildinfo
-
+**/.tw-patch
 **/vite.config.*.timestamp-*

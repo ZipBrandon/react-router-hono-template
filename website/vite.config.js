@@ -7,6 +7,7 @@ import devServer, { defaultOptions } from "@hono/vite-dev-server";
 
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import utwm from "unplugin-tailwindcss-mangle/vite";
 
 import { config } from "dotenv";
 import { expand } from "dotenv-expand";
@@ -51,7 +52,15 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
+    utwm(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
   build: {
     emptyOutDir: true,
     minify: true,

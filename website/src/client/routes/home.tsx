@@ -18,31 +18,30 @@ export default function Index() {
     <div className="flex h-full items-center justify-center bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 dark:from-zinc-700 dark:via-neutral-900 dark:to-zinc-900">
       <div className="flex h-full w-full flex-col items-center justify-center gap-6 border-0 border-solid border-zinc-300 bg-zinc-50 px-8 pb-8 pt-14 sm:gap-12 md:h-auto md:w-[620px] md:rounded-[2.5rem] md:border-[1px] dark:border-zinc-700 dark:bg-zinc-900">
         <header className="flex flex-col items-center gap-2">
-          <h1 className={`leading text-2xl font-bold text-zinc-800 dark:text-zinc-100`}>
+          <h1 className="leading text-2xl font-bold text-zinc-800 dark:text-zinc-100">
             Welcome to <span className="sr-only">React Router</span>
           </h1>
           <div className="flex h-[100px] w-[301.39px] items-center sm:h-[144px] sm:w-[434px]">
-            <img src="/logo-light.svg" alt="React Router" className={`block w-full dark:hidden`} />
-            <img src="/logo-dark.svg" alt="React Router" className={`hidden w-full dark:block`} />
+            <img src="/logo-light.svg" alt="React Router" className="block w-full dark:hidden" />
+            <img src="/logo-dark.svg" alt="React Router" className="hidden w-full dark:block" />
           </div>
         </header>
-        <nav className={`flex w-full flex-col items-center justify-center gap-4 rounded-3xl border border-zinc-200 p-6 dark:border-zinc-700`}>
-          <div className={`flex w-full flex-col justify-between gap-y-2 sm:flex-row sm:items-center`}>
-            <div className={`flex flex-col gap-x-1 gap-y-3 sm:flex-row sm:items-center`}>
-              <p className={`text-sm font-normal leading-4 text-zinc-800 dark:text-zinc-100`}>Get started by editing&nbsp;</p>
-              <code
-                className={`rounded-md border border-zinc-300 bg-slate-200 px-2 py-1 font-mono text-xs font-medium text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300`}>
+        <nav className="flex w-full flex-col items-center justify-center gap-4 rounded-3xl border border-zinc-200 p-6 dark:border-zinc-700">
+          <div className="flex w-full flex-col justify-between gap-y-2 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-x-1 gap-y-3 sm:flex-row sm:items-center">
+              <p className="text-sm font-normal leading-4 text-zinc-800 dark:text-zinc-100">Get started by editing&nbsp;</p>
+              <code className="rounded-md border border-zinc-300 bg-slate-200 px-2 py-1 font-mono text-xs font-medium text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
                 client/routes/home.tsx
               </code>
             </div>
 
             <ThemeToggle />
           </div>
-          <ul className={`grid w-full grid-cols-1 gap-4 sm:grid-cols-2`}>
+          <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
             {resources.map(({ href, text, icon }) => (
               <li key={href}>
                 <a
-                  className={`group flex h-12 items-center gap-3 self-stretch rounded-xl border border-zinc-300 px-4 text-sm leading-normal text-zinc-700 hover:underline dark:border-zinc-700 dark:text-zinc-300`}
+                  className="group flex h-12 items-center gap-3 self-stretch rounded-xl border border-zinc-300 px-4 text-sm leading-normal text-zinc-700 hover:underline dark:border-zinc-700 dark:text-zinc-300"
                   href={href}
                   target="_blank"
                   rel="noreferrer">
