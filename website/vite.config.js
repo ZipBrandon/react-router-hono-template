@@ -52,7 +52,7 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    utwm(),
+    ...(env?.NODE_ENV !== "development" ? [utwm()] : []),
   ],
   css: {
     preprocessorOptions: {
