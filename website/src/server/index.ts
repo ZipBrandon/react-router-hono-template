@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import { join, posix } from "node:path";
 import url from "node:url";
 
 import { serve } from "@hono/node-server";

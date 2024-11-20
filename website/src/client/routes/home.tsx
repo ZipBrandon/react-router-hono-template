@@ -5,14 +5,15 @@ import { cloneElement } from "react";
 import type { MetaFunction } from "react-router";
 
 import { ThemeToggle } from "~/client/theme/toggle";
-import type { Route } from "../+types.root";
+import type { Info } from "../+types/root";
 
 export const meta: MetaFunction = () => {
   return [{ title: "New React Router App" }, { name: "description", content: "Welcome to React Router!" }];
 };
 
 export default function Index() {
-  const data = useRouteLoaderData("root") as Route.LoaderData;
+  const data = useRouteLoaderData<Info["loaderData"]>("root");
+  if (!data) throw new Error("Failed to load data from 'root'");
 
   return (
     <div className="flex h-full items-center justify-center bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 dark:from-zinc-700 dark:via-neutral-900 dark:to-zinc-900">

@@ -11,7 +11,6 @@ import utwm from "unplugin-tailwindcss-mangle/vite";
 
 import { config } from "dotenv";
 import { expand } from "dotenv-expand";
-import esbuild from "esbuild";
 
 expand(config({ path: resolve(cwd(), "../.env") }));
 
@@ -24,33 +23,7 @@ export default defineConfig({
       entry: "src/server/index.ts",
       exclude: [/^\/(src\/client)\/.+/, ...defaultOptions.exclude],
     }),
-    reactRouter({
-      appDirectory: "src/client",
-      serverBuildFile: "react-router.js",
-      serverModuleFormat: "esm",
-      async buildEnd({ reactRouterConfig }) {
-        await esbuild
-          .build({
-            alias: {
-              "~": "./src",
-            },
-            outfile: `${reactRouterConfig.buildDirectory}/server/index.js`,
-            entryPoints: ["src/server/index.ts"],
-            external: [`${reactRouterConfig.buildDirectory}/server/*`],
-            platform: "node",
-            format: "esm",
-            packages: "external",
-            bundle: true,
-            logLevel: "info",
-            minify: true,
-            mangleCache: {},
-          })
-          .catch((error) => {
-            console.error(error);
-            process.exit(1);
-          });
-      },
-    }),
+    reactRouter(),
     tsconfigPaths(),
     ...(env?.NODE_ENV !== "development" ? [utwm()] : []),
   ],
